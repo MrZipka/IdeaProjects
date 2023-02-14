@@ -34,7 +34,6 @@ public class HomeWork3 {
         int[] correctAnswers = {2, 3, 1, 3, 3};
 
         for (int i = 0; i <= 4; i++) {
-            // Вывод вопроса на экран
             a=a+1;
             System.out.println("Вопрос №" + a + " " + questions[i]);
             int b=0;
@@ -44,7 +43,6 @@ public class HomeWork3 {
                 System.out.println(b + "." + " " + answerOptions [i][j]);
             }
             System.out.print("Ваш ответ: ");
-            // Считываем с консоли ответ пользователя
             Scanner scanner = new Scanner (System.in);
             int answer = scanner.nextInt();
             if (answer == correctAnswers[i]) {
