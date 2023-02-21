@@ -1,23 +1,35 @@
-public class Questions {
+public class Question {
+
+    private int number;
+    private String question;
+    private Answer [] answer;
+
+    public Question(int i, String s) {
+    }
+
+//    public Question(){
+//        this.number = number;
+//        this.question = question;
+//}
+    Question question1 = new Question(1, "Лунную сонату написал ..");
+
+
 //    static Question[] questionNew = new Question[5];
 
+//      public String[] questions = {
+//            "Лунную сонату написал ..",
+//            "Фраза Время-деньги принадлежит ...",
+//            "Государственный Музей Эрмитаж появился при ...",
+//            "Самым большим пингвином является ...",
+//            "Мужская гимнастика была включена в Олимпийские игры в ..."
+//    };
 
-    // попытка создать переменную в классе, а потом подтянуть её в другой класс успешна
-    static int s = 5;
 
-    //    Такой массив хорошо генерируется и легко передаётся наружу
-    static public String[] questions = {
-            "Лунную сонату написал ..",
-            "Фраза Время-деньги принадлежит ...",
-            "Государственный Музей Эрмитаж появился при ...",
-            "Самым большим пингвином является ...",
-            "Мужская гимнастика была включена в Олимпийские игры в ..."
-    };
 
-    private static void printAll() {
-        for (int i = 0; i < 5; i++) {
-            System.out.println(questions[i]);
-        }
+//    private void printAll() {
+//        for (int i = 0; i < 5; i++) {
+//            System.out.println(questions[i]);
+//        }
 
 
         // подобная попытка записать значение в массив без метода приводит к ошибке
@@ -45,6 +57,6 @@ public class Questions {
 //        this.name = name;
 //    }
 
-    }
+//    }
 }
 
