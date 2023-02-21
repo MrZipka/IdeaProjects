@@ -14,6 +14,7 @@ public class Question {
     Question question1 = new Question(1, "Лунную сонату написал ..");
 
 
+
 //    static Question[] questionNew = new Question[5];
 
 //      public String[] questions = {

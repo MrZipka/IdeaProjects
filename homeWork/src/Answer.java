@@ -1,12 +1,15 @@
 public class Answer {
-    private int namber;
-    private String  answerOption1;
-    private String  answerOption2;
-    private String  answerOption3;
+    private int number;
+    private String  answerOption;
 
-    public Answer (){
+    public Answer (int i, String s){
             }
 
+Answer answer1 = new Answer(1, "Пётр Ильич Чайковский");
+Answer answer2 = new Answer(2, "Людвиг ван Бетховен");
+Answer answer3 = new Answer(3, "Иоганн Себастьян Бах");
+
+Answer[] answers = {answer1, answer2, answer3};
 
 //    public String[][] answerOptions = {
 //            {"Пётр Ильич Чайковский", "Людвиг ван Бетховен", "Иоганн Себастьян Бах"},
