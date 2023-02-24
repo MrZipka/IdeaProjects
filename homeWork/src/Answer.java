@@ -1,15 +1,21 @@
 public class Answer {
-    private int number;
-    private String  answerOption;
+    public int number;
+    public String text;
 
-    public Answer (int i, String s){
-            }
+    public Answer() {
+    }
 
-Answer answer1 = new Answer(1, "Пётр Ильич Чайковский");
-Answer answer2 = new Answer(2, "Людвиг ван Бетховен");
-Answer answer3 = new Answer(3, "Иоганн Себастьян Бах");
+    public Answer(int number, String text) {
+        this.number = number;
+        this.text = text;
+    }
+}
 
-Answer[] answers = {answer1, answer2, answer3};
+//Answer answer1 = new Answer(1, "Пётр Ильич Чайковский");
+//Answer answer2 = new Answer(2, "Людвиг ван Бетховен");
+//Answer answer3 = new Answer(3, "Иоганн Себастьян Бах");
+
+//Answer[] answers = {answer1, answer2, answer3};
 
 //    public String[][] answerOptions = {
 //            {"Пётр Ильич Чайковский", "Людвиг ван Бетховен", "Иоганн Себастьян Бах"},
@@ -21,4 +27,4 @@ Answer[] answers = {answer1, answer2, answer3};
 
 //    public int [] correctAnswers = {2, 3, 1, 3, 3};
 
-    }
+//}

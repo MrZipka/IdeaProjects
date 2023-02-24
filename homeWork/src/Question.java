@@ -1,18 +1,18 @@
 public class Question {
 
-    private int number;
-    private String question;
-    private Answer [] answer;
+    public int number;
+    public String text;
+//    Answer[] answers;
 
-    public Question(int i, String s) {
+    public Question() {
     }
 
-//    public Question(){
-//        this.number = number;
-//        this.question = question;
-//}
-    Question question1 = new Question(1, "Лунную сонату написал ..");
-
+    public Question(int number, String text) {
+        this.number = number;
+        this.text = text;
+    }
+}
+//    Question question1 = new Question(1, "Лунную сонату написал ..");
 
 
 //    static Question[] questionNew = new Question[5];
@@ -26,17 +26,16 @@ public class Question {
 //    };
 
 
-
 //    private void printAll() {
 //        for (int i = 0; i < 5; i++) {
 //            System.out.println(questions[i]);
 //        }
 
 
-        // подобная попытка записать значение в массив без метода приводит к ошибке
+// подобная попытка записать значение в массив без метода приводит к ошибке
 //    static String questionNew[0] = "Лунную сонату написал .."
 
-        // добавление значений в массив в стандартном методе приводит к невозможности получить значение массива из другого класса. При подобной конфигурации создания массива, ссылка на конкретный (i-тый) элемент массива выдаёт значение null.
+// добавление значений в массив в стандартном методе приводит к невозможности получить значение массива из другого класса. При подобной конфигурации создания массива, ссылка на конкретный (i-тый) элемент массива выдаёт значение null.
 //    public static void main(String[] args) {
 //        questionNew[0] = new Question("Лунную сонату написал ..");
 //        questionNew[1] = new Question("Фраза Время-деньги принадлежит ...");
@@ -59,5 +58,5 @@ public class Question {
 //    }
 
 //    }
-}
+//}
 
