@@ -9,6 +9,10 @@ public class Answer {
         this.number = number;
         this.text = text;
     }
+
+    public void print () {
+        System.out.println(this.number + "." + this.text);
+    }
 }
 
 //Answer answer1 = new Answer(1, "Пётр Ильич Чайковский");

@@ -1,15 +1,31 @@
-public class Question {
+import java.util.Scanner;
 
-    public int number;
+public class Question {
     public String text;
-//    Answer[] answers;
+    Answer[] answers;
 
     public Question() {
     }
 
-    public Question(int number, String text) {
-        this.number = number;
+    public Question(String text) {
         this.text = text;
+    }
+
+    public void print() {
+        System.out.println(this.text);
+
+//        for (Answer answer : this.answers){
+//            answer.print();
+//        }
+
+
+        for (int j=0; j < answers.length; j++) {
+            answers[j].print();
+        }
+
+//        System.out.println("Your answer: ");
+//        Scanner scanner = new Scanner(System.in);
+//        int answer = scanner.nextInt();
     }
 }
 //    Question question1 = new Question(1, "Лунную сонату написал ..");
