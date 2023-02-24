@@ -36,69 +36,18 @@ public class Test {
         question4.answers = new Answer[]{answer10, answer11, answer12};
         question5.answers = new Answer[]{answer13, answer14, answer15};
 
-
-        question1.print();
-        System.out.println("Your answer: ");
-        Scanner scanner1 = new Scanner(System.in);
-        int userAnswer1 = scanner1.nextInt();
-        if (userAnswer1 == 2) {
+        for (int i = 0; i < questions.length; i++) {
+            questions[i].print();
+            System.out.println("Your answer: ");
+        Scanner scanner = new Scanner(System.in);
+        int userAnswer = scanner.nextInt();
+        if (userAnswer == correctAnswers[i]) {
             System.out.println("correct");
             correctCount = correctCount + 1;
         } else {
             System.out.println("wrong");
             wrongCount = wrongCount + 1;
         }
-
-        question2.print();
-        System.out.println("Your answer: ");
-        Scanner scanner2 = new Scanner(System.in);
-        int userAnswer2 = scanner2.nextInt();
-        if (userAnswer2 == 3) {
-            System.out.println("correct");
-            correctCount = correctCount +1;
-        }
-        else {
-            System.out.println("wrong");
-            wrongCount = wrongCount + 1;
-        }
-
-        question3.print();
-        System.out.println("Your answer: ");
-        Scanner scanner3 = new Scanner(System.in);
-        int userAnswer3 = scanner3.nextInt();
-        if (userAnswer3 == 1) {
-            System.out.println("correct");
-            correctCount = correctCount +1;
-        }
-        else {
-            System.out.println("wrong");
-            wrongCount = wrongCount + 1;
-        }
-
-        question4.print();
-        System.out.println("Your answer: ");
-        Scanner scanner4 = new Scanner(System.in);
-        int userAnswer4 = scanner4.nextInt();
-        if (userAnswer4 == 3) {
-            System.out.println("correct");
-            correctCount = correctCount +1;
-        }
-        else {
-            System.out.println("wrong");
-            wrongCount = wrongCount + 1;
-        }
-
-        question5.print();
-        System.out.println("Your answer: ");
-        Scanner scanner5 = new Scanner(System.in);
-        int userAnswer5 = scanner5.nextInt();
-        if (userAnswer5 == 3) {
-            System.out.println("correct");
-            correctCount = correctCount +1;
-        }
-        else {
-            System.out.println("wrong");
-            wrongCount = wrongCount + 1;
         }
 
         System.out.println("correct ansers: " + correctCount);
