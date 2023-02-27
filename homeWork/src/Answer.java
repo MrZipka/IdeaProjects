@@ -1,18 +1,21 @@
 public class Answer {
     public int number;
     public String text;
+    public boolean isRight;
 
     public Answer() {
     }
 
-    public Answer(int number, String text) {
+    public Answer(int number, String text, boolean isRight) {
         this.number = number;
         this.text = text;
+        this.isRight = isRight;
     }
 
     public void print () {
         System.out.println(this.number + "." + this.text);
     }
+//    public static int[] correctAnswers = {2, 3, 1, 3, 3};
 }
 
 //Answer answer1 = new Answer(1, "Пётр Ильич Чайковский");

@@ -1,8 +1,10 @@
+import javax.swing.*;
 import java.util.Scanner;
 
 public class Question {
     public String text;
     Answer[] answers;
+
 
     public Question() {
     }
@@ -14,20 +16,29 @@ public class Question {
     public void print() {
         System.out.println(this.text);
 
-//        for (Answer answer : this.answers){
-//            answer.print();
-//        }
 
-
-        for (int j=0; j < answers.length; j++) {
+        for (int j = 0; j < answers.length; j++) {
             answers[j].print();
         }
-
-//        System.out.println("Your answer: ");
-//        Scanner scanner = new Scanner(System.in);
-//        int answer = scanner.nextInt();
     }
-}
+
+    public boolean checkAnswer(int userAnswer) {
+                   return (answers[userAnswer].isRight&true);
+        }
+    }
+
+//               if (questions[i].checkAnswer(userAnswer)==true) {
+//            System.out.println("correct");
+//            correctCount = correctCount + 1;
+//        } else {
+//            System.out.println("wrong");
+//            wrongCount = wrongCount + 1;
+//        }
+//          }
+//        return false;
+//    }
+
+//}
 //    Question question1 = new Question(1, "Лунную сонату написал ..");
 
 
