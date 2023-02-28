@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 //correctAnswers = {2, 3, 1, 3, 3};
 public class Test {
     public static void main(String[] args) {
@@ -47,21 +48,20 @@ public class Test {
 //            System.out.println("wrong");
 //            wrongCount = wrongCount + 1;
 //        }
-
-            System.out.println(questions[i].checkAnswer(userAnswer));
 //
-//            if (questions[i].checkAnswer(userAnswer) == true) {
-//                System.out.println("correct");
-//                correctCount = correctCount + 1;
-//            } else {
-//                System.out.println("wrong");
-//                wrongCount = wrongCount + 1;
-//            }
-//        }
+//            System.out.println(questions[i].checkAnswer(userAnswer));
 //
-//        System.out.println("correct ansers: " + correctCount);
-//        System.out.println("wrong answers: " + wrongCount);
-}
+            if (questions[i].checkAnswer(userAnswer)) {
+                System.out.println("correct");
+                correctCount = correctCount + 1;
+            } else {
+                System.out.println("wrong");
+                wrongCount = wrongCount + 1;
+            }
+        }
+//
+        System.out.println("correct ansers: " + correctCount);
+        System.out.println("wrong answers: " + wrongCount);
     }
 }
 

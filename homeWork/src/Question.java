@@ -23,9 +23,10 @@ public class Question {
     }
 
     public boolean checkAnswer(int userAnswer) {
-                   return (answers[userAnswer].isRight&true);
-        }
+        userAnswer = userAnswer-1;
+        return (answers[userAnswer].isRight);
     }
+}
 
 //               if (questions[i].checkAnswer(userAnswer)==true) {
 //            System.out.println("correct");
