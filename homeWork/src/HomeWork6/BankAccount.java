@@ -1,0 +1,100 @@
+package HomeWork6;
+
+import java.util.*;
+
+public class BankAccount {
+    public static void main(String[] args) {
+
+        Map<Integer, Client> clients = new HashMap<>();
+
+//        fillMap(clients);
+        Client client1 = new Client(18, "Вася");
+        Client client2 = new Client(20, "Петя");
+        Client client3 = new Client(24, "Коля");
+
+        clients.put(123, client1);
+        clients.put(456, client2);
+        clients.put(789, client3);
+        clients.put(555, client3);
+
+        Client client = new Client(24, "Коля");
+
+        System.out.println(clients);
+
+        System.out.println("==============================> Вывожу все ключи мапы");
+
+        for (Integer acc : clients.keySet()) {
+            System.out.println(acc);
+        }
+
+        System.out.println("==============================> Проверяю наличие занчений/ключей в мапе");
+
+        System.out.println("clients.containsValue(client) -> " + clients.containsValue(client));
+        System.out.println("clients.get -> " + clients.get(123));
+
+        System.out.println("==============================> Передаю все пары ключ-значение в связанное множество и вывожу результат");
+
+        for (Map.Entry e : clients.entrySet()) {
+            System.out.println(e.getKey() + " : " + e.getValue());
+        }
+
+        System.out.println("==============================> Передаю все ключи в множество и вывожу множество");
+
+        Set<Integer> checkAcc = clients.keySet();
+        System.out.println(checkAcc);
+
+        System.out.println("==============================> Поиск всех счетов клиента");
+
+        for (Integer c : getKeys(clients, client)){
+            System.out.println(c);
+        }
+
+        System.out.println("==============================> поиск клиента по номеру счёта");
+
+        System.out.println(clients.get(555));
+    }
+
+    private static Set<Integer> getKeys(Map<Integer, Client> map, Client client) {
+
+        Set<Integer> result = new HashSet<>();
+        if (map.containsValue(client)) {
+            for (Map.Entry<Integer, Client> entry : map.entrySet()) {
+                if (Objects.equals(entry.getValue(), client)) {
+                    result.add(entry.getKey());
+                }
+                // we can't compare like this, null will throws exception
+              /*(if (entry.getValue().equals(value)) {
+                  result.add(entry.getKey());
+              }*/
+            }
+        }
+        return result;
+
+    }
+
+}
+
+//    private static void fillMap(Map<Client, ArrayList<Integer>> clients) {
+//        Client client1 = new Client(1, "Вася");
+//        Client client2 = new Client(2, "Петя");
+//        Client client3 = new Client(3, "Коля");
+//
+//        clients.put(client1, 123);
+//        clients.put(client2, 456);
+//        clients.put(client3, 789);
+//
+//    }
+
+//private static void findeObject (Map<Client, Integer> clients){
+//
+//}
+
+//        client1.checkAcc();
+//        String n = clients.get(1).getName();
+//        System.out.println(clients.get(3).getName());
+
+//        System.out.println("Введите пользователя ");
+//        Scanner scanner = new Scanner(System.in);
+//        String findAcc = scanner.next();
+//}
+
