@@ -1,5 +1,7 @@
 package HomeWork6;
 
+import java.util.Objects;
+
 public class Client {
     public int age;
     public String name;
@@ -29,11 +31,11 @@ public class Client {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Client client = (Client) o;
-        return age == client.age && name.equals(client.name);
+        return age == client.age && Objects.equals(name, client.name);
     }
 
-//    @Override
-//    public int hashCode() {
-//        return Objects.hash(id, name);
-//    }
+    @Override
+    public int hashCode() {
+        return Objects.hash(age, name);
+    }
 }
