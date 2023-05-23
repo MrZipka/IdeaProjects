@@ -1,6 +1,7 @@
 package HomeWork7;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
@@ -34,10 +35,9 @@ public class Exceptions {
             System.out.println("Введено недопустимое значение");
         }
 
-
         mathOption();
 
-    tryWithResources();
+
     }
 
     private static void mathOption() throws Exception {
@@ -57,13 +57,20 @@ public class Exceptions {
         System.out.println(sum);
     }
 
-    private static void tryWithResources()    {
+    private static class Stub {
+        public String getText() {
+            return "Первая строка файла";
+        }
+    }
+
+    private void tryWithResources()    {
         BufferedReader br = null;
         String line;
+        Stub stub = new Stub();
 
         try {
 
-            br = new BufferedReader(new FileReader("c:\\testing.txt"));
+            br = new BufferedReader(new FileReader(stub.getText()));
             while ((line = br.readLine()) != null) {
                 System.out.println(line);
             }
@@ -78,6 +85,7 @@ public class Exceptions {
             }
         }
     }
+
 
     private static class Question {
         private String text;
