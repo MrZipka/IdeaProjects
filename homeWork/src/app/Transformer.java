@@ -1,7 +1,3 @@
-import org.w3c.dom.ls.LSOutput;
-
-import java.util.Scanner;
-
 public class Transformer {
 
         private final ConverterImpl converter;
