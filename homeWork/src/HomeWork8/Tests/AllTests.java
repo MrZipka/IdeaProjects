@@ -13,11 +13,15 @@ public class AllTests {
     public static void main(String[] args) {
         Dice dice = new Dice4();
         GameWinnerPrinter winnerPrinter = new GameWinnerConsolePrinter();
+        Game game = new Game(dice, winnerPrinter);
+        Player player1 = new Player("Вася");
+        Player player2 = new Player("Петя");
 
-        new GamePlayersTest().checkPLayersAdd(new Player("Вася"),new Player("Вася"));
-        new GameDrawTest(dice, winnerPrinter).drawTest();
+        new GameDrawTest().drawTest();
         new DiceImplNegativeTest().rollTestNegativeValues();
         new DiceImplNumericTest().rollNumericValues();
+        new GameWinner1Test().Winner1Test();
+        new GameWinner2Test().Winner2Test();
 
     }
 }
