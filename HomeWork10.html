@@ -1,0 +1,161 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Стилизованная таблица</title>
+
+    <style>
+        h3 {
+            color: steelblue;
+        }
+
+        .students-tab {
+            border: 1px solid steelblue;
+            width: 650px;
+            border-collapse: collapse;
+            margin-bottom: 300px;
+        }
+
+        .students-tab tr td {
+            border: 1px solid steelblue;
+        }
+
+        .students-tab-col1 {
+            width: 300px;
+        }
+
+        .students-tab-col2 {
+            width: 120px;
+        }
+
+        .students-tab-col3 {
+            width: 150px;
+        }
+
+        .students-tab-col4 {
+            width: 80px;
+        }
+
+    </style>
+
+  
+</head>
+<body>
+    <h3>Таблица студентов</h3>
+    <table class="students-tab">
+        <thead>
+            <tr>
+                <td class="students-tab-col1">Имя студента</td>
+                <td class="students-tab-col2">Пол</td>
+                <td class="students-tab-col3">Дата рождения</td>
+                <td class="students-tab-col4">Возраст</td>
+            </tr>
+        </thead>
+
+        <tbody id="studentsTab">
+            <tr>
+                <td>Иван Ограномович Штейн</td>
+                <td>мужчина</td>
+                <td>1974-06-12</td>
+                <td>46</td>
+            </tr>
+            <tr>
+                <td>Гертруда Анатольевна Иванова</td>
+                <td>женщина</td>
+                <td>01987-01-01</td>
+                <td>34</td>
+            </tr>
+            <tr>
+                <td>Воланд Игоревич Муха</td>
+                <td>мужчина</td>
+                <td>1974-04-27</td>
+                <td>47</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="4">&nbsp;</td>
+            </tr> 
+			<tr>
+                <td colspan="3">Средний возраст студентов</td>
+                <td id = "middle_age">42</td>
+            </tr>
+        </tfoot>
+    </table>
+	
+		<p>
+			<label for = "fioTextBox">ФИО Студента</label>
+			<input id = "fioTextBox" name = "fio" type = "text">
+		</p>
+		
+		<p>
+			<label>
+				Пол
+				<select name = "sex" id = "sex">
+					<option value = "1" selected>мужчина</option>
+					<option value = "2">женщина</option>
+				</select>
+			</label>    
+		</p>
+
+		<p>
+			<label for = "birthday">Дата рождения</label>
+			<input id = "birthday" name = "birthDate" type = "date" value = "">
+		</p>
+
+	 
+		<button onclick = "addStudent()">Добавить студента</button>
+
+	<script>
+        function addStudent() {
+			const studentsTab = document.getElementById("studentsTab");
+			const row = studentsTab.insertRow(-1);
+			
+			const fioTextBox = document.getElementById("fioTextBox");
+			const sex = document.getElementById("sex");
+			const birthday = document.getElementById("birthday");
+			const middle_age = document.getElementById("middle_age");
+				
+			const cell1 = row.insertCell(0);
+			const cell2 = row.insertCell(1);
+			const cell3 = row.insertCell(2);
+			const cell4 = row.insertCell(3);
+			
+			cell1.innerHTML = fioTextBox.value;
+			
+			if (sex.value === "1") {
+			cell2.innerHTML = "мужчина";
+			} else {
+			cell2.innerHTML = "женщина";
+			}
+			cell3.innerHTML = birthday.value;
+			
+			const date1 = birthday.value;
+							
+				
+			const age = Math.floor((new Date() - new Date (birthday.value))/1000/60/60/24/365);
+			
+			cell4.innerHTML = age;
+			
+			
+			<!-- for (i = 0; i < 2; i++){ -->
+			<!-- var x = studentsTab.rows[i].cells[3].innerHTML; -->
+			<!-- sum = sum + x; -->
+			<!-- } -->
+			
+			var sum = 0;
+			for (var count = 0; count < studentsTab.rows.length; count++) {
+				sum = sum + Number(studentsTab.rows[count].cells[3].innerHTML);
+			}
+			var middleAge = (sum / studentsTab.rows.length);
+			
+			<!-- a = studentsTab.rows[4].cells[3].innerHTML; -->
+			a = studentsTab.rows.length;
+			b = Number(studentsTab.rows[2].cells[3].innerHTML);
+			
+			middle_age.innerHTML = middleAge;
+		}
+
+    </script>
+    
+</body>
+</html>
